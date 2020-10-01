@@ -16,13 +16,13 @@ public class BuscaMinasTest {
 
     @Test
     public void test_select_space_MINE(){
-        Assert.assertTrue(BuscaMinas.select_space(0, 0, boardTest1));
-        Assert.assertTrue(BuscaMinas.select_space(1, 0, boardTest1));
-        Assert.assertTrue(BuscaMinas.select_space(1, 1, boardTest1));
+        Assert.assertTrue(BuscaMinas.selectSpace(0, 0, boardTest1));
+        Assert.assertTrue(BuscaMinas.selectSpace(1, 0, boardTest1));
+        Assert.assertTrue(BuscaMinas.selectSpace(1, 1, boardTest1));
     }
     @Test
     public void test_select_space_SQUARE(){
-        Assert.assertFalse(BuscaMinas.select_space(0, 1, boardTest1));
+        Assert.assertFalse(BuscaMinas.selectSpace(0, 1, boardTest1));
 
         Assert.assertEquals(boardTest1[0][1], OPEN_SQUARE);
         Assert.assertFalse(BuscaMinas.selectSpace(1, 2, boardTest1));
@@ -33,7 +33,7 @@ public class BuscaMinasTest {
       
     @Test
     public void test_select_space_OPEN_SQUARE(){
-        Assert.assertFalse(BuscaMinas.select_space(0, 2, boardTest1));
+        Assert.assertFalse(BuscaMinas.selectSpace(0, 2, boardTest1));
         Assert.assertEquals(boardTest1[0][2], OPEN_SQUARE);
         Assert.assertFalse(BuscaMinas.selectSpace(2, 0, boardTest1));
         Assert.assertEquals(boardTest1[2][0], OPEN_SQUARE);
@@ -46,7 +46,7 @@ public class BuscaMinasTest {
       
     @Test
     public void test_select_space_GAME(){
-        Assert.assertFalse(BuscaMinas.select_space(0, 0, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(0, 0, boardTest2));
         Assert.assertEquals(boardTest2[0][0], OPEN_SQUARE);
 
         Assert.assertFalse(BuscaMinas.selectSpace(0, 0, boardTest2));
@@ -84,28 +84,28 @@ public class BuscaMinasTest {
 
     @Test
     public void test_generate_board_equals0(){
-        int[][] board = BuscaMinas.generate_board(2,2);
+        int[][] board = BuscaMinas.generateBoard(2,2);
         Assert.assertEquals(board.length,2);
         Assert.assertEquals(board[0].length,2);
     }
 
     @Test
     public void test_generate_board_equals1(){
-        int[][] board = BuscaMinas.generate_board(10,10);
+        int[][] board = BuscaMinas.generateBoard(10,10);
         Assert.assertEquals(board.length,10);
         Assert.assertEquals(board[0].length,10);
     }
 
     @Test
     public void test_generate_board_different0(){
-        int[][] board = BuscaMinas.generate_board(5,9);
+        int[][] board = BuscaMinas.generateBoard(5,9);
         Assert.assertEquals(board.length,9);
         Assert.assertEquals(board[0].length,5);
     }
 
     @Test
     public void test_generate_board_different1(){
-        int[][] board = BuscaMinas.generate_board(12,7);
+        int[][] board = BuscaMinas.generateBoard(12,7);
         Assert.assertEquals(board.length,7);
         Assert.assertEquals(board[0].length,12);
     }
@@ -134,7 +134,7 @@ public class BuscaMinasTest {
     }
 
     private void generic (int [][]test_board, int ancho, int alto, boolean expected_result) {
-        boolean result = BuscaMinas.check_if_win (test_board, ancho, alto);
+        boolean result = BuscaMinas.checkIfWin (test_board, ancho, alto);
         Assert.assertEquals(expected_result, result);
     }
 

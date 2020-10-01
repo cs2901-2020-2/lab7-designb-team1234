@@ -34,10 +34,8 @@ public class BuscaMinas {
 		String log = ("Quedan " + casillasRestantes + " casillas sin minas");
 		logger.info(log);
 		logger.info("Casillas abiertas: ");
-		Iterator it = selectedCasillas.keySet().iterator();
-		while(it.hasNext()){
-			Integer key = (Integer) it.next();
-			log = ("[" + key + "]" + "["+ selectedCasillas.get(key) + "]");
+		for (Integer key : selectedCasillas.keySet()) {
+			log = ("[" + key + "]" + "[" + selectedCasillas.get(key) + "]");
 			logger.info(log);
 		}
 	}
