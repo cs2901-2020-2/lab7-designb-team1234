@@ -3,12 +3,14 @@ import org.testng.Assert;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Random;
 
 public class BuscaMinasTest {
   
     private static final int MINE = -1;
     private static final int SQUARE = 0;
     private static final int OPEN_SQUARE = 2;
+    Random rand = new Random();
 
     int [][] boardTest1 ={{MINE, SQUARE, OPEN_SQUARE},
             {MINE, MINE, SQUARE},
@@ -84,28 +86,28 @@ public class BuscaMinasTest {
 
     @Test
     public void test_generate_board_equals0(){
-        int[][] board = BuscaMinas.generateBoard(2,2);
+        int[][] board = BuscaMinas.generateBoard(2,2, rand);
         Assert.assertEquals(board.length,2);
         Assert.assertEquals(board[0].length,2);
     }
 
     @Test
     public void test_generate_board_equals1(){
-        int[][] board = BuscaMinas.generateBoard(10,10);
+        int[][] board = BuscaMinas.generateBoard(10,10, rand);
         Assert.assertEquals(board.length,10);
         Assert.assertEquals(board[0].length,10);
     }
 
     @Test
     public void test_generate_board_different0(){
-        int[][] board = BuscaMinas.generateBoard(5,9);
+        int[][] board = BuscaMinas.generateBoard(5,9, rand);
         Assert.assertEquals(board.length,9);
         Assert.assertEquals(board[0].length,5);
     }
 
     @Test
     public void test_generate_board_different1(){
-        int[][] board = BuscaMinas.generateBoard(12,7);
+        int[][] board = BuscaMinas.generateBoard(12,7, rand);
         Assert.assertEquals(board.length,7);
         Assert.assertEquals(board[0].length,12);
     }

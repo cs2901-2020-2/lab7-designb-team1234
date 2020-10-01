@@ -7,13 +7,13 @@ public class BuscaMinas {
 	private static final int CASILLA = 0;
 	private static final int CASILLA_ABIERTA = 2;
 	private static int casillasRestantes = 0;
-	private static Map<Integer, Integer> selectedCasillas = new HashMap<Integer, Integer>();
+	private static Map<Integer, Integer> selectedCasillas = new HashMap<>();
 
 	static final Logger logger = Logger.getLogger(BuscaMinas.class.getName());
 
-	public static int[][] generateBoard(int ancho, int alto) {
+	public static int[][] generateBoard(int ancho, int alto, Random rand) {
 	    int [][]board = new int[alto][ancho];
-	    Random rand = new Random();
+
 
 	    for (int i = 0; i < alto; i++) {
 	    	for (int j = 0; j < ancho; j++) {
