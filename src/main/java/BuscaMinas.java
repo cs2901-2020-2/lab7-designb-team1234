@@ -7,7 +7,7 @@ public class BuscaMinas {
 	private static final int CASILLA = 0;
 	private static final int CASILLA_ABIERTA = 2;
 	private static int casillasRestantes = 0;
-	private static Map<Integer, Integer> selectedCasillas = new HashMap<Integer, Integer>();
+	private static Map<Integer, Integer> selectedCasillas = new HashMap<>();
 
 	static final Logger logger = Logger.getLogger(BuscaMinas.class.getName());
 
@@ -34,12 +34,10 @@ public class BuscaMinas {
 		String log = ("Quedan " + casillasRestantes + " casillas sin minas");
 		logger.info(log);
 		logger.info("Casillas abiertas: ");
-		Iterator it = selectedCasillas.keySet().iterator();
-		while(it.hasNext()){
-			Integer key = (Integer) it.next();
-			log = ("[" + key + "]" + "["+ selectedCasillas.get(key) + "]");
-			logger.info(log);
-		}
+		  for (Integer key : selectedCasillas.keySet()) {
+			  log = ("[" + key + "]" + "[" + selectedCasillas.get(key) + "]");
+			  logger.info(log);
+		  }
 	}
 
     public static boolean selectSpace(int alto, int ancho, int [][] board) {
