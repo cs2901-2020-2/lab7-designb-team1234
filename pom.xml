@@ -9,7 +9,7 @@
         <sonar.projectKey>cs2901-2020-2_02b-buscaminas-team1234</sonar.projectKey>
         <sonar.organization>cs2901-2020-2</sonar.organization>
         <sonar.host.url>https://sonarcloud.io/</sonar.host.url>
-        <sonar.login>xxx</sonar.login>
+        <sonar.login>a5988d322e947bede7ee4976fcb4955b4154ad82</sonar.login>
     </properties>
     <groupId>cs2901</groupId>
     <artifactId>Buscaminas1234</artifactId>
