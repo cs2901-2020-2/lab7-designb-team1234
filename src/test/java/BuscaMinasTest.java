@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class BuscaMinasTest {
-
+  
     private static final int MINE = -1;
     private static final int SQUARE = 0;
     private static final int OPEN_SQUARE = 2;
@@ -23,57 +23,61 @@ public class BuscaMinasTest {
     @Test
     public void test_select_space_SQUARE(){
         Assert.assertFalse(BuscaMinas.select_space(0, 1, boardTest1));
+
         Assert.assertEquals(boardTest1[0][1], OPEN_SQUARE);
-        Assert.assertFalse(BuscaMinas.select_space(1, 2, boardTest1));
+        Assert.assertFalse(BuscaMinas.selectSpace(1, 2, boardTest1));
         Assert.assertEquals(boardTest1[1][2], OPEN_SQUARE);
-        Assert.assertFalse(BuscaMinas.select_space(2, 1, boardTest1));
+        Assert.assertFalse(BuscaMinas.selectSpace(2, 1, boardTest1));
         Assert.assertEquals(boardTest1[2][1], OPEN_SQUARE);
     }
+      
     @Test
     public void test_select_space_OPEN_SQUARE(){
         Assert.assertFalse(BuscaMinas.select_space(0, 2, boardTest1));
         Assert.assertEquals(boardTest1[0][2], OPEN_SQUARE);
-        Assert.assertFalse(BuscaMinas.select_space(2, 0, boardTest1));
+        Assert.assertFalse(BuscaMinas.selectSpace(2, 0, boardTest1));
         Assert.assertEquals(boardTest1[2][0], OPEN_SQUARE);
     }
+      
     int [][] boardTest2 ={{SQUARE, MINE, SQUARE,MINE},
             {OPEN_SQUARE,MINE,SQUARE,SQUARE},
             {OPEN_SQUARE, SQUARE, MINE, SQUARE},
             {SQUARE, MINE, MINE, OPEN_SQUARE}};
+      
     @Test
     public void test_select_space_GAME(){
         Assert.assertFalse(BuscaMinas.select_space(0, 0, boardTest2));
         Assert.assertEquals(boardTest2[0][0], OPEN_SQUARE);
 
-        Assert.assertFalse(BuscaMinas.select_space(0, 0, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(0, 0, boardTest2));
         Assert.assertEquals(boardTest2[0][0], OPEN_SQUARE);
 
-        Assert.assertTrue(BuscaMinas.select_space(0,1,boardTest2));
+        Assert.assertTrue(BuscaMinas.selectSpace(0,1,boardTest2));
 
-        Assert.assertFalse(BuscaMinas.select_space(0, 2, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(0, 2, boardTest2));
         Assert.assertEquals(boardTest2[0][2], OPEN_SQUARE);
 
-        Assert.assertFalse(BuscaMinas.select_space(1, 0, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(1, 0, boardTest2));
         Assert.assertEquals(boardTest2[1][0], OPEN_SQUARE);
 
-        Assert.assertFalse(BuscaMinas.select_space(1, 0, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(1, 0, boardTest2));
         Assert.assertEquals(boardTest2[1][0], OPEN_SQUARE);
 
-        Assert.assertFalse(BuscaMinas.select_space(1, 2, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(1, 2, boardTest2));
         Assert.assertEquals(boardTest2[1][2], OPEN_SQUARE);
 
-        Assert.assertFalse(BuscaMinas.select_space(1, 2, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(1, 2, boardTest2));
         Assert.assertEquals(boardTest2[1][2], OPEN_SQUARE);
 
-        Assert.assertFalse(BuscaMinas.select_space(2, 1, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(2, 1, boardTest2));
         Assert.assertEquals(boardTest2[2][1], OPEN_SQUARE);
 
-        Assert.assertFalse(BuscaMinas.select_space(1, 2, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(1, 2, boardTest2));
         Assert.assertEquals(boardTest2[1][2], OPEN_SQUARE);
 
-        Assert.assertTrue(BuscaMinas.select_space(3,1,boardTest2));
+        Assert.assertTrue(BuscaMinas.selectSpace(3,1,boardTest2));
 
-        Assert.assertFalse(BuscaMinas.select_space(3, 3, boardTest2));
+        Assert.assertFalse(BuscaMinas.selectSpace(3, 3, boardTest2));
         Assert.assertEquals(boardTest2[3][3], OPEN_SQUARE);
 
     }
